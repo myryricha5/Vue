@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- <html> -->
+<head>
+	<meta charset="UTF-8"></meta>
+	<title>速習 Vue.js</title>
+</head>
+<body>
+
+<div id="app">
+	<!-- 準備済みの値を出力 -->
+	<p>{{ message + 'hello!' }}</p>
+	<p v-text="message"></p>
+	<p v-pre>{{ message }}</p>
+</div>
+
+<div id="app2">
+	<p>{{ message }}</p>
+	<p v-html="message"></p>
+</div>
+
+<div id="app3">
+	<a v-bind:href="url">サポートサイト</a><br/>
+	<a :href="url">サポートサイト</a>
+</div>
+
+<!-- よくない例 -->
+<div id="app4">
+	<p>{{ email.split('@')[0].toLowerCase() }}</p>
+</div>
+
+<div id="app5">
+	<p>{{ localEmail() }}</p>
+</div>
+
+<div id="app6">
+	<form>
+		<input type="button" value="クリック" v-on:click="onclick" />
+	</form>
+	<p>算出プロパティ：{{ randomc }}</p>
+	<p>メソッド：{{ randomm() }}</p>
+	<p>現在日時：{{ current }}</p>
+</div>
+
+
+
+<!-- ページ本体 -->
+<script th:src="@{https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js}"></script>
+<script th:src="@{/js/hello.js}"></script>
+
+</body>
+</html>
