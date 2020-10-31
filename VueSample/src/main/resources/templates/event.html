@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- <html> -->
+<head>
+	<meta charset="UTF-8"></meta>
+	<title>速習 Vue.js</title>
+</head>
+<body>
+
+<div id="app">
+	<button v-on:click="onclick">クリック</button>
+	<p>{{ message }}</p>
+</div>
+
+<div id="app2">
+	<button v-on:click="onclick('hogechan')">クリック</button>
+	<p>{{ message }}</p>
+</div>
+
+<div id="app3">
+	<button @click="onclick">クリック</button>
+	<p>{{ message }}</p>
+</div>
+
+<div id="app4">
+	<button v-on:click="onclick">クリック</button>
+</div>
+
+<!-- ページ本体 -->
+<script th:src="@{https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js}"></script>
+<script th:src="@{/js/event.js}"></script>
+
+</body>
+</html>

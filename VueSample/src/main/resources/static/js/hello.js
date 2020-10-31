@@ -48,22 +48,22 @@ var app6= new Vue({
 
 	el: '#app6',
 	data: {
-		current: new Date().toLocaleString()
+		current: new Date().toLocaleString()+'first'
 	},
 	computed: {
 		//算出プロパティ経由で乱数を取得
 		randomc: function() {
-			return Math.random();
+			return Math.random()+'first';
 		}
 	},
 	methods: {
 		//クリック時に処理を実行
 		onclick: function(){
-			this.current = new Date().toLocaleString();
+			this.current = new Date().toLocaleString()+'click';
 		},
 		//メソッド経由で乱数を取得
 		randomm: function(){
-			return Math.random();
+			return Math.random()+'random';
 		}
 	}
 });
