@@ -1,5 +1,6 @@
 /**
  * アップロード用ロジック
+ * jsフォルダ配下に、node_modules,package-lock.json,jquery-3.5.1.min.js配置必須
  */
 
 const app = new Vue({
@@ -42,9 +43,9 @@ const app = new Vue({
 				 	console.log(error)
 				 })
 			})*/
-			$('.update-button').removeClass("button-hide");
 			
-			$('.movie-file-name').text(file.name);
+			$('.update-button').removeClass("button-hide");
+			//$('.movie-file-name').text(file.name);
 			this.isEnter = false;
 		},
 		deleteFile() {
