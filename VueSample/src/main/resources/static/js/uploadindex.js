@@ -10,10 +10,12 @@ const app = new Vue({
 		files: []
 	},
 	methods: {
+		//エリア内にドラッグされた瞬間のみ発火
 		dragEnter() {
 			console.log("enter drop area");
 			this.isEnter = true;
 		},
+		//エリア内からエリア外に出た瞬間のみ発火
 		dragLeave() {
 			console.log("leave drop area");
 			this.isEnter = false;
@@ -22,13 +24,16 @@ const app = new Vue({
 		dragOver() {
 			console.log("over drop area");
 		},
+		//ファイルドロップ時発火
 		dropFile() {
 			console.log("dropped file");
+			//アップロードファイルを判定
 			this.files = event.target.files ? event.target.files : event.dataTransfer.files;
 			//１ファイルのみ送信
 			let file = this.files.length > 0 ? this.files[0] : [];
 			console.log(file);
 			
+			/*ここからはサーバ送信時に更新するよ〜*/
 			//urlにバックエンドサーバのエンドポイントを設定する
 			/* this.files.forEach(file => {*/
 				let form = new FormData()
@@ -44,14 +49,16 @@ const app = new Vue({
 				 })
 			})*/
 			
+			/*ドロップされた瞬間、submitボタンを表示*/
 			$('.update-button').removeClass("button-hide");
-			//$('.movie-file-name').text(file.name);
 			this.isEnter = false;
 		},
+		//削除ボタン押下時発火
 		deleteFile() {
 			this.files = [];
 			$('.update-button').addClass("button-hide");
 		},
+		//送信ボタン押下時発火（今後更新するよ〜）
 		sendFile() {
 			this.files.forEach(file => {
 				let form = new FormData()
