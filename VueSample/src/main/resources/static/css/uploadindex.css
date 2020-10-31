@@ -1,0 +1,130 @@
+html, body {
+	height: 100%;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.drop_area {
+	color: gray;
+	font-weight: bold;
+	font-size: 1.2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 500px;
+	height: 300px;
+	border: 5px solid gray;
+	border-radius: 15px;
+}
+
+.enter {
+	background-color: #FF5555;
+	color: #fff;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1.0em;
+	font-size: 0.8em;
+}
+
+.upload-buttons-area {
+	display: flex;
+	width: 220px;
+	justify-content: space-between;
+	margin-top: 8px;
+	margin-bottom: 40px;
+}
+
+label>input {
+	display: none; /* アップロードボタンのスタイルを無効にする */
+}
+
+label {
+	width: 100px;
+	height: 36px;
+	background-color: #CCC;
+	border-radius: 2px;
+	cursor: pointer;
+	color: darken(#333, 40%);
+	font-weight: bold;
+	font-size: 0.85em;
+	text-align: center;
+	padding-top:8px;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	box-sizing: border-box;
+}
+
+label :hover {
+	background-color: darken(#CCC, 20%);
+}
+
+.upload-button-area { /*selectFile*/
+	width: 300px;
+	display: flex;
+	margin-top: 8px;
+	margin-bottom: 40px;
+}
+
+.button-hide {
+	display: none;
+}
+
+.update-button {
+	width: 240px;
+	height: 50px;
+	background-color: #FF5555;
+	border-radius: 5px;
+	border: 2px solid #fff;
+	cursor: pointer;
+	color: #fff;
+	font-weight: bold;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.update-button :hover {
+	background-color: darken(#FF5555, 20%);
+}
+
+.min-button {
+	width: 100px;
+	height: 36px;
+	background-color: #CCC;
+	border-radius: 2px;
+	border: none;
+	cursor: pointer;
+	color: darken(#333, 40%);
+	font-weight: bold;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.min-button:hover {
+	background-color: darken(#CCC, 20%);
+}

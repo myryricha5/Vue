@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- <html> -->
+<head>
+<meta charset="UTF-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script th:src="@{https://unpkg.com/axios/dist/axios.min.js}"></script>
+<script th:src="@{https://cdn.jsdelivr.net/npm/vue/dist/vue.js}"></script>
+<script th:src="@{https://cdn.jsdelivr.net/npm/vue-resource@1.5.1}"></script>
+
+<link th:href="@{/css/uploadindex.css}" rel="stylesheet" type="text/css">
+
+<title>Fileアップロードロジック</title>
+</head>
+<body>
+	<!-- 参考はここ： https://reffect.co.jp/vue/drag-drop-file-upload#dragenter_dragleave -->
+
+	<!-- 1ファイルアップロード -->
+	<div id="app">
+		<div class="drop_area" @dragenter="dragEnter" @dragleave="dragLeave"
+			@dragover.prevent @drop.prevent="dropFile" :class="{enter: isEnter}">
+			<span v-show="!files.length">動画ファイルをドラッグ＆ドロップ</span>
+
+			<ul>
+				<li class="flex-col" v-if="files.length"><img class="file_icon"
+					src="../img/moviefile.png"> <span>{{ files[0].name }}</span>
+				</li>
+			</ul>
+		</div>
+
+		<div v-show="!files.length" class="upload-button-area">
+			<label for="file_upload"><input type="file" id="file_upload"
+				@change="dropFile" :class="{enter: isEnter}">ファイル選択</input></label>
+		</div>
+
+		<div v-show="files.length" class="upload-buttons-area">
+			<label for="file_upload"><input type="file" id="file_upload"
+				@change="dropFile" :class="{enter: isEnter}">ファイル変更</input></label>
+			<button class="min-button" @click="deleteFile()" type="button">キャンセル</button>
+		</div>
+
+		<button class="update-button button-hide" id="validation-movie" type="button">使い方動画の更新</button>
+
+	</div>
+
+	<script th:src="@{/js/uploadindex.js}"></script>
+</body>
+</html>

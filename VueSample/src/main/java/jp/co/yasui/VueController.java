@@ -20,9 +20,9 @@ public class VueController {
 		return "event";
 	}
 	
-	@GetMapping("/index")
-	public String getIndex(Model model) {
-		return "index";
+	@GetMapping("/uploadindex")
+	public String getUploadindex(Model model) {
+		return "uploadindex";
 	}
 	
 	@PostMapping("/top")
